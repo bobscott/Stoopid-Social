@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>stoopidSocial</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>Share Buttons</h1>
+<div class="share-container"></div>
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="stoopidSocial.js"></script>
+<script>
+
+$('.share-container').stoopidSocial({ 
+    networks: ['facebook', 'twitter', 'pintrest', 'google'], 
+    shareData: { 
+        title: 'This is the title',
+        copy: 'This is the share copy',
+        image: 'https://www.google.com/images/srpr/logo11w.png',
+        url: 'http://www.google.com'
+    },
+    facebookSDK: true,
+    facebookAppID: '1',
+    twitterSDK: true
+});
+
+</script>
+</body>
+</html>
