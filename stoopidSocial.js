@@ -10,11 +10,12 @@
     // Defaults values
     var pluginName = 'stoopidSocial',
         defaults = {
-            networks      : [],                                             // The social networks to create share buttons
-            shareData     :  { title: '', copy: '', image: '', url: '' },   // The data to share
-            facebookSDK   : false,                                          // Loads the Facebook JavaScript SDK
-            facebookAppID : '',                                             // The Facebook App ID to use
-            twitterSDK    : false                                           // Loads the Twitter SDK
+            networks       : [],                                             // The social networks to create share buttons
+            shareData      :  { title: '', copy: '', image: '', url: '' },   // The data to share
+            facebookSDK    : false,                                          // Loads the Facebook JavaScript SDK
+            facebookAppID  : '',                                             // The Facebook App ID to use for the JavaScript SDK
+            twitterSDK     : false,                                          // Loads the Twitter SDK
+            customCallback : function(network,shareData){}                   // Callback function for custom share buttons
         };
 
     // The plugin constructor
@@ -91,6 +92,16 @@
             $(this.wrapper).append($markup);
         },
 
+        // Creates a custom share button.
+        customShare: function(network){
+            var that = this,
+                $markup = $('<div class="stoopid-icon stoopid-' + network + '"></div>');
+            $markup.bind('click touchend', function(){
+                that.options.customCallback(network, that.options.shareData);
+            });
+            $(this.wrapper).append($markup);
+        },
+
         // Initialization function
         init: function() {
             var networks = this.options.networks,
@@ -111,6 +122,9 @@
                     break;
                     case 'google':
                         this.google(shareData);
+                    break;
+                    default:
+                        this.customShare(networks[a]);
                     break;
                 }
             }

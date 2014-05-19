@@ -13,8 +13,13 @@
 <script src="stoopidSocial.js"></script>
 <script>
 
+function customShare(network, shareData) {
+    alert("You clicked the custom share button for " + network);
+    console.log(shareData);
+}
+
 $('.share-container').stoopidSocial({ 
-    networks: ['facebook', 'twitter', 'pintrest', 'google'], 
+    networks: ['facebook', 'twitter', 'pintrest', 'google', 'email'], 
     shareData: { 
         title: 'This is the title',
         copy: 'This is the share copy',
@@ -22,8 +27,9 @@ $('.share-container').stoopidSocial({
         url: 'http://www.google.com'
     },
     facebookSDK: true,
-    facebookAppID: '1',
-    twitterSDK: true
+    facebookAppID: '123456789',
+    twitterSDK: true,
+    customCallback: customShare
 });
 
 </script>
