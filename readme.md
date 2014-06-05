@@ -2,7 +2,7 @@
 
 #### Stoopid Social is a jQuery plugin that dynamically creates share buttons for various social networks.  
 
-The current version supports Facebook, Twitter, Pintrest, and Google+. Other networks can be added by using the custom callback function.
+The current version supports Facebook, Twitter, Pintrest, and Google+. Other social networks can be added by using the custom callback function.
 
 ```JS
 $('.share-container').stoopidSocial({ 
@@ -19,7 +19,7 @@ $('.share-container').stoopidSocial({
     customCallback: customShareHandle
 });
 
-// Your callback function for custom share networks
+// Your callback function for custom social networks
 function customShareHandle(network, shareData) {
     console.log('You actived the share button for ' + network);
     console.log('This is the data to share: ');
