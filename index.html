@@ -19,7 +19,7 @@ function customShare(network, shareData) {
 }
 
 $('.share-container').stoopidSocial({ 
-    networks: ['facebook', 'twitter', 'pintrest', 'google', 'email'], 
+    networks: ['facebook', 'twitter', 'pintrest', 'google', 'linkedin', 'email'], 
     shareData: { 
         title: 'This is the title',
         copy: 'This is the share copy',
@@ -29,7 +29,8 @@ $('.share-container').stoopidSocial({
     facebookSDK: true,
     facebookAppID: '123456789',
     twitterSDK: true,
-    customCallback: customShare
+    injectStyles: true,
+    customNetwork: customShare
 });
 
 </script>

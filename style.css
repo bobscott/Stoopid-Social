@@ -2,22 +2,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-}
-
-.stoopid-icon {
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    margin: 10px;
-    border-radius: 50%;
-    overflow: hidden;
-    float: left;
-    cursor: pointer;
-}
-
-.stoopid-icon a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
+    background-color: #ccc;
+    text-align: center;
+    font-family: arial;
 }
