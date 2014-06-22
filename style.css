@@ -2,7 +2,18 @@ html,
 body {
     padding: 0;
     margin: 0;
-    background-color: #ccc;
+    background-color: #eee;
     text-align: center;
     font-family: arial;
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.share-container {
+    padding: 10px;
+    background-color: #ccc;
 }

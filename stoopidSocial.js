@@ -175,7 +175,6 @@
                 });
             }
         }
-
     };
 
     // jQuery plugin setup
