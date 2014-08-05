@@ -48,7 +48,7 @@ A function that gets called when a share button created for a custom network is 
 
 ##### Default Value: function (network, shareData) {}
 
-## [http://robertscott.dev/stoopidSocial/](Working Example)
+## [Working Example](http://robertscott.dev/stoopidSocial/)
 ```HTML
 <div class="share-container"></div>
 
