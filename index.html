@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Stoopid Social</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Stoopid Social Example</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<h1>Share Buttons</h1>
-<div class="share-container"></div>
+<div class="share-container">
+    <h1>Stoopid Social Example</h1>
+</div>
+
+<p><a href="https://github.com/bobscott/Stoopid-Social" target="_blank">Download Stoopid Social on Github</a>.</p>
 
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="stoopidSocial.js"></script>
 <script>
 
+// Callback function for custom networks
 function customShare(network, shareData) {
     alert("You clicked the custom share button for " + network);
     console.log(shareData);
 }
 
+// Initialize Stoopid Social
 $('.share-container').stoopidSocial({ 
     networks: ['facebook', 'twitter', 'pintrest', 'google', 'linkedin', 'email'], 
     shareData: { 
         title: 'Stoopid Social makes share buttons easy!',
-        copy: 'Tired of making share buttons? Use Stoopid Social to take the leg work out of setting up sharing buttons.',
+        copy: 'Tired of making share buttons? Use Stoopid Social to take the leg work out of setting up share buttons.',
         image: 'http://stoopidsocial.robertscott.co/anti-social.png',
         url: 'http://stoopidsocial.robertscott.co'
     },
