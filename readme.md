@@ -48,31 +48,31 @@ A function that gets called when a share button created for a custom network is 
 
 ##### Default Value: function (network, shareData) {}
 
-## Working Example
+## [http://robertscott.dev/stoopidSocial/](Working Example)
 ```HTML
 <div class="share-container"></div>
 
 <script>
-$('.share-container').stoopidSocial({ 
-    networks: ['facebook', 'twitter', 'linkedIn', 'pintrest', 'google', 'custom-network'], 
-    shareData: { 
-        title : 'This is the title',
-        copy  : 'This is the share copy',
-        image : 'https://www.google.com/images/srpr/logo11w.png',
-        url   : 'http://www.google.com'
-    },
-    facebookSDK: true,
-    facebookAppID: '1',
-    twitterSDK: true,
-    injectStyles: true,
-    customNetwork: customShareHandle
-});
-
-// Your callback function for custom social networks
-function customShareHandle(network, shareData) {
-    console.log('You actived the share button for ' + network);
-    console.log('This is the data to share: ');
+// Callback function for custom networks
+function customShare(network, shareData) {
+    alert("You clicked the custom share button for " + network);
     console.log(shareData);
 }
+
+// Initialize Stoopid Social
+$('.share-container').stoopidSocial({ 
+    networks: ['facebook', 'twitter', 'pintrest', 'google', 'linkedin', 'email'], 
+    shareData: { 
+        title: 'Stoopid Social makes share buttons easy!',
+        copy: 'Tired of making share buttons? Use Stoopid Social to take the leg work out of setting up share buttons.',
+        image: 'http://stoopidsocial.robertscott.co/anti-social.png',
+        url: 'http://stoopidsocial.robertscott.co'
+    },
+    facebookSDK: true,
+    facebookAppID: '1433669126896374',
+    twitterSDK: true,
+    injectStyles: true,
+    customNetwork: customShare
+});
 </script>
 ```
